@@ -1,0 +1,11 @@
+NAME: test4
+TYPE: TSP
+COMMENT: 4-node test instance (square)
+DIMENSION: 4
+EDGE_WEIGHT_TYPE: EUC_2D
+NODE_COORD_SECTION
+1 0 0
+2 0 1
+3 1 1
+4 1 0
+EOF
