@@ -1,2 +1,3 @@
 algorithm,instance,cost,time_ms
-held_karp,test4,-1,0.027304
+held_karp,test4,4,0.011931
+held_karp,test18,180,262.014

@@ -1,0 +1,25 @@
+NAME: test18_grid
+TYPE: TSP
+COMMENT: 18-node grid layout (non-negative integer coords)
+DIMENSION: 18
+EDGE_WEIGHT_TYPE: EUC_2D
+NODE_COORD_SECTION
+1 0 0
+2 10 0
+3 20 0
+4 30 0
+5 40 0
+6 50 0
+7 0 10
+8 10 10
+9 20 10
+10 30 10
+11 40 10
+12 50 10
+13 0 20
+14 10 20
+15 20 20
+16 30 20
+17 40 20
+18 50 20
+EOF
