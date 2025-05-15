@@ -14,11 +14,11 @@ int main(int argc, char* argv[]) {
 
     auto dist = load_tsplib_file(input_path);
 
-    // 알고리즘 특성상 
+    // 알고리즘 특성상 n이 넘어가면 공간 시간 부족 그래서 n을 25이하로 잡음
     int n = dist.size();
-    if (n > 20) {
-        cout << "[Held-Karp] Skipped: n = " << n << " is too large for Held-Karp (max 20 allowed)\n";
-    return 0;
+    if (n > 25) {
+        cout << "[Held-Karp] Skipped: n = " << n << " is too large for Held-Karp (max 25 allowed)\n";
+        return 0;
     }
 
     auto start = chrono::steady_clock::now();

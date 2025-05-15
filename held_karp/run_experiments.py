@@ -1,10 +1,8 @@
-import os
 import subprocess
-import time
 
 # 설정
 EXECUTABLE = "../build/held_karp_exec"
-INSTANCES = ["test4", "test18"]
+INSTANCES = ["test4", "test18", "test20", "test22","test23", "test24", "test25"]
 DATA_DIR = "../data"
 
 for instance in INSTANCES:

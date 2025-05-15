@@ -1,9 +1,9 @@
-import os
 import subprocess
-import time
 
 # 설정
-EXECUTABLE = "../build/held_karp_exec"
+EXECUTABLE = "../build/christofides_exec"
+# 근데 테스트 4개 중 최소가 280
+# 그래서 test4, test18, test22로 잘 작동하는 지 확인
 INSTANCES = ["test4", "test18"]
 DATA_DIR = "../data"
 

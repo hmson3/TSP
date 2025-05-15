@@ -1,0 +1,5 @@
+algorithm,instance,cost,time_ms
+christofides,test4,-1,0.03456
+christofides,test18,-1,0.132437
+christofides,test4,-1,0.033939
+christofides,test18,-1,0.133229
