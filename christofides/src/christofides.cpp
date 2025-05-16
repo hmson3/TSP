@@ -3,6 +3,7 @@
 #include <climits>
 #include <iostream>
 #include <queue>
+#include <algorithm>
 
 using namespace std;
 
@@ -20,9 +21,15 @@ int christofides(const vector<vector<int>>& dist) {
     cout << "odd nodes = ";
     for (int v : odd_nodes) cout << v << " ";
     cout << "\n";   
+
     // 원래 blossom 알고리즘으로 완전매칭을 구현해야하지만 너무 복잡하고 오래걸림 O(n^3) 
     // 이거 때문에 Christofides 알고리즘 시간복잡도가 O(n^3)
     // 그리디로 구현 후에 성능 비교?
+
+    auto matchings = greedy_matching(odd_nodes, dist);
+    for (auto [u, v] : matchings) {
+        cout << u << " - " << v << " (dist = " << dist[u][v] << ")" << endl;
+    }
 
     return -1; 
 }
@@ -70,4 +77,38 @@ vector<int> find_odd_nodes(const vector<pair<int, int>>& edges, int n) {
             odd_nodes.push_back(i);
     }
     return odd_nodes;
+}
+
+vector<pair<int, int>> greedy_matching(const vector<int>& odd_nodes, const vector<vector<int>>& dist) {
+
+    vector<pair<int, int>> ret;
+    int n = odd_nodes.size();
+    vector<bool> matched(n, false);
+
+    vector<tuple<int, int, int>> candi;
+
+    // 모든 후보 거리 계산
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            int u = odd_nodes[i];
+            int v = odd_nodes[j];
+            candi.push_back({dist[u][v], i, j});
+        }
+    }
+
+    // 거리순에 정렬
+    sort(candi.begin(),candi.end());
+ 
+    // 가까운 순으로 매칭
+    int nn = 0; 
+    for(auto[cost,i,j] : candi) {
+        if(nn >= n) break;
+        if(matched[i] || matched[j]) continue;
+        matched[i] = true;
+        matched[j] = true;
+        ret.push_back({odd_nodes[i], odd_nodes[j]});
+        nn += 2;
+    }
+
+    return ret;
 }
