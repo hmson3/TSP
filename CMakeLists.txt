@@ -26,3 +26,12 @@ add_executable(christofides_exec
     common/src/util.cpp
 )
 target_compile_options(christofides_exec PUBLIC -Wall -Werror)
+
+# my_tsp 실행 파일
+add_executable(my_tsp_exec
+    my_tsp/main.cpp
+    my_tsp/src/my_tsp.cpp
+    common/src/tsp_loader.cpp
+    common/src/util.cpp
+)
+target_compile_options(my_tsp_exec PUBLIC -Wall -Werror)

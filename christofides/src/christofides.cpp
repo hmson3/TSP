@@ -45,9 +45,13 @@ int christofides(const vector<vector<int>>& dist) {
     cout << '\n';
 
     auto cycle = hamiltonian_cycle(tour);
+
+    cout << "cycle: ";
+    for(auto vv : cycle) cout << vv << ' ';
+    cout << '\n';
     
     int ret = 0;
-    for(int i = 0; i < n; i++) ret += dist[cycle[i]][cycle[i+1]];
+    for(int i = 0; i + 1 < (int)cycle.size(); i++) ret += dist[cycle[i]][cycle[i+1]];
 
     return ret; 
 }
