@@ -11,7 +11,7 @@ using namespace std;
 
 int my_tsp(const vector<vector<int>>& dist) {
     int n = dist.size();
-    cout << "[my_tsp] n = " << n << " (input matrix loaded)" << endl;
+    cout << "[My-TSP] n = " << n << endl;
 
     // KNN 그래프
     int k = 5;
@@ -19,9 +19,11 @@ int my_tsp(const vector<vector<int>>& dist) {
 
     // LPA 클러스터링
     auto label = run_lpa(graph);
+    /*
     cout << "[LPA] Labels: ";
     for (int x : label) cout << x << " ";
     cout << endl;
+    */
 
     // 클러스터별 부분 TSP
     unordered_map<int, vector<int>> clusters;
@@ -36,11 +38,13 @@ int my_tsp(const vector<vector<int>>& dist) {
         cluster_paths.push_back(path);
     }
     
+    /*
     for (int i = 0; i < (int)cluster_paths.size(); i++) {
         cout << "[cluster " << i << "] ";
         for (int v : cluster_paths[i]) cout << v << " ";
         cout << endl;
     }
+    */
 
 
     // 먼저 cluster 대표 노드 수집
@@ -67,9 +71,11 @@ int my_tsp(const vector<vector<int>>& dist) {
 
     full_path.push_back(full_path[0]);
 
+    /*
     cout << "[full_path] = ";
     for(auto vv : full_path) cout << vv << ' ';
     cout << endl;
+    */
 
     // 비용계산
     int ret = 0;

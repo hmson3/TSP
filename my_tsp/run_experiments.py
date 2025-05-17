@@ -2,7 +2,7 @@ import subprocess
 
 # 설정
 EXECUTABLE = "../build/my_tsp_exec"
-INSTANCES = ["test18", "test20", "test22","test23", "test24", "test25"]
+INSTANCES = ["test4", "test18", "test20", "test22", "test24", "a280", "xql662", "kz9976", "mona-lisa100K"]
 DATA_DIR = "../data"
 
 for instance in INSTANCES:

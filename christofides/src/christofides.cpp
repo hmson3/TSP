@@ -13,42 +13,53 @@ int christofides(const vector<vector<int>>& dist) {
     int n = dist.size();
     cout << "[Christofides] n = " << n << "\n";
     auto mst = compute_mst(dist,n);
-    cout << "edges = " << mst.size() << "\n";
+    /*cout << "edges = " << mst.size() << "\n";
     for (auto [u, v] : mst) { 
         cout << u << " - " << v << " (" << dist[u][v] << ")" << "\n";
-    }
+    }*/
 
     auto odd_nodes = find_odd_nodes(mst, n);
 
+    /*
     cout << "odd nodes = ";
     for (int v : odd_nodes) cout << v << " ";
     cout << "\n";   
-
+    */
+    
     // 원래 blossom 알고리즘으로 완전매칭을 구현해야하지만 너무 복잡하고 오래걸림 O(n^3) 
     // 이거 때문에 Christofides 알고리즘 시간복잡도가 O(n^3)
     // 그리디로 구현 후에 성능 비교?
 
     auto matchings = greedy_matching(odd_nodes, dist);
+    /*
     for (auto [u, v] : matchings) {
         cout << u << " - " << v << " (dist = " << dist[u][v] << ")" << '\n';
     }
+    */
     auto graph = graph_make(mst,matchings, n);
+    /*
     for (int u = 0; u < n; u++) {
         cout << u << " : ";
         for (int v : graph[u]) cout << v << " ";
         cout << '\n';
     }
-    auto tour = find_eulerian_tour(graph);
+    */
 
+    auto tour = find_eulerian_tour(graph);
+    
+    /*
     cout << "Eulerian Tour: ";
     for (int v : tour) cout << v << " ";
     cout << '\n';
+    */
 
     auto cycle = hamiltonian_cycle(tour);
 
+    /*
     cout << "cycle: ";
     for(auto vv : cycle) cout << vv << ' ';
     cout << '\n';
+    */
     
     int ret = 0;
     for(int i = 0; i + 1 < (int)cycle.size(); i++) ret += dist[cycle[i]][cycle[i+1]];

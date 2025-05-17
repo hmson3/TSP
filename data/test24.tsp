@@ -1,4 +1,4 @@
-NAME: test24_grid
+NAME: test24
 TYPE: TSP
 COMMENT: 24-node grid layout
 DIMENSION: 24

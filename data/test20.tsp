@@ -1,4 +1,4 @@
-NAME: test20_grid
+NAME: test20
 TYPE: TSP
 COMMENT: 20-node grid layout
 DIMENSION: 20

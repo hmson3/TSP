@@ -1,4 +1,4 @@
-NAME: test18_grid
+NAME: test18
 TYPE: TSP
 COMMENT: 18-node grid layout (non-negative integer coords)
 DIMENSION: 18
