@@ -11,7 +11,7 @@ int main(int argc, char* argv[]) {
     string instance = (argc > 1) ? argv[1] : "test4";
     string input_path = "../data/" + instance + ".tsp";
     string opt_path = "../data/opt/" + instance + ".opt.tour";
-    string output_path = "../christofides/result/christofides_result.csv";
+    string output_path = "../christofides_2approx/result/christofides_2approx_result.csv";
 
     auto dist = load_tsplib_file(input_path);
 
@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
 
     double time_ms = chrono::duration<double, milli>(end - start).count();
 
-    cout << "[Christofides] Cost = " << cost << ", Time = " << time_ms << " ms" << endl;
+    cout << "[Christofides_2approx] Cost = " << cost << ", Time = " << time_ms << " ms" << endl;
 
     auto opt_path_vec = load_opt_tour(opt_path);
     double ratio = -1.0;
@@ -33,6 +33,6 @@ int main(int argc, char* argv[]) {
         cout << "[OPT] N/A" << endl;
     }
 
-    save_result(output_path, "my_tsp", instance, cost, time_ms, ratio);
+    save_result(output_path, "christofides_2approx", instance, cost, time_ms, ratio);
     return 0;
 }

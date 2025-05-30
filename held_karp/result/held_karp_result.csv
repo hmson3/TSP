@@ -1,6 +1,6 @@
 algorithm,instance,cost,time_ms,approx_ratio
-my_tsp,test4,4,0.013473,1.0000
-my_tsp,test18,180,281.466,1.0000
-my_tsp,test20,200,1360.74,1.0000
-my_tsp,test22,220,6955.24,1.0000
-my_tsp,test24,240,32627.3,1.0000
+held_karp,test4,4,0.013473,1.0000
+held_karp,test18,180,281.466,1.0000
+held_karp,test20,200,1360.74,1.0000
+held_karp,test22,220,6955.24,1.0000
+held_karp,test24,240,32627.3,1.0000

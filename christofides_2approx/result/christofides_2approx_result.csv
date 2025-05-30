@@ -1,0 +1,10 @@
+algorithm,instance,cost,time_ms,approx_ratio
+christofides_2approx,test4,4,0.024393,1.0000
+christofides_2approx,test18,210,0.136434,1.1667
+christofides_2approx,test20,268,0.165281,1.3400
+christofides_2approx,test22,308,0.203543,1.4000
+christofides_2approx,test24,348,0.209573,1.4500
+christofides_2approx,a280,3549,15.5573,1.3761
+christofides_2approx,xql662,3537,99.0367,1.4075
+christofides_2approx,kz9976,1455342,22425.7,1.3705
+christofides_2approx,mona-lisa_sample,2733985,17768,N/A
