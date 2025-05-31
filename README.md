@@ -19,19 +19,19 @@ make
 ### 2. Run Experiments
 
 ```bash
-# Held-Karp
+# Run Held-Karp
 python3 held_karp/run_experiments.py
-python3 held_karp/summary.py
+python3 held_karp/summary.py  # Generates summary csv
 
-# Christofides_2approx
+# Run Christofides with MST doubling
 python3 christofides_2approx/run_experiments.py
 python3 christofides_2approx/summary.py
 
-# Christofides_greedy
+# Run Christofides with greedy matching
 python3 christofides_greedy/run_experiments.py
-python3 christofides_greddy/summary.py
+python3 christofides_greedy/summary.py
 
-# My-tsp
+# Run My-TSP (LPA + KNN + local TSP merging)
 python3 my_tsp/run_experiments.py
 python3 my_tsp/summary.py
 ```
