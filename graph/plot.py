@@ -43,16 +43,17 @@ def plot_grouped_bar(df, value_col, ylabel, filename, ylim=None, log_scale=False
 
     ax = pivot.plot(kind='bar', figsize=(10, 6))
     plt.ylabel(ylabel)
-    ax.set_ylabel(ylabel, fontsize=15)     # y축 라벨 폰트 크기
+    ax.set_ylabel(ylabel, fontsize=20)     # y축 라벨 폰트 크기
     ax.set_xlabel("")                      # x축 라벨 제거
-    ax.tick_params(axis='x', labelsize=15) # x축 인스턴스 라벨 크기
-    ax.tick_params(axis='y', labelsize=12)
+    ax.tick_params(axis='x', labelsize=20) # x축 인스턴스 라벨 크기
+    ax.tick_params(axis='y', labelsize=20)
     if ylim:
         plt.ylim(ylim)
     if log_scale:
         ax.set_yscale('log')
     plt.xticks(rotation=0)
-    plt.legend(title='Algorithm')
+    ax.get_legend().remove()
+
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, filename))
     plt.close()
@@ -73,5 +74,5 @@ def filter_and_plot(instances, exclude_heldkarp=False, mona=False, ylim_time=Non
 
 # ─────────────── 그래프 실행 ───────────────
 filter_and_plot(['test4', 'test18', 'test20', 'test22', 'test24'], ylim_time=(1e-2, 1e5), ylim_ratio=(0.0, 2.0), log_time=True)
-filter_and_plot(['a280', 'xql662'], exclude_heldkarp=True, ylim_time=(0, 200), ylim_ratio=(1.0, 2.0))
-filter_and_plot(['kz9976', 'mona-lisa_sample'], exclude_heldkarp=True, mona=True, ylim_time=(0, 40000))
+filter_and_plot(['a280', 'xql662'], exclude_heldkarp=True, ylim_time=(0, 200), ylim_ratio=(0.0, 2.0))
+filter_and_plot(['kz9976','mona-lisa_sample'], exclude_heldkarp=True, mona=True, ylim_time=(0, 40000))
