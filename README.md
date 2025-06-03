@@ -1,8 +1,9 @@
-# TSP Solver: Held-Karp, Christofides, and My-TSP
+# TSP ALGORITHMS: Held-Karp, MST-based 2-approximation, Christofides, and My-TSP
 
 This project provides implementations and comparative evaluation of three different algorithms for solving the Travelling Salesman Problem (TSP):
 
 - **Held-Karp** (exact, dynamic programming)
+- **MST-based** (2-approximaiton)
 - **Christofides** (1.5-approximation, including greedy variant)
 - **My-TSP** (custom clustering-based approximation)
 
