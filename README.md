@@ -4,7 +4,7 @@ This project provides implementations and comparative evaluation of three differ
 
 - **Held-Karp** (exact, dynamic programming)
 - **MST-based** (2-approximaiton)
-- **Christofides** (1.5-approximation, including greedy variant)
+- **Christofides** (1.5-approximation, greedy variant)
 - **My-TSP** (custom clustering-based approximation)
 
 ## 🚀 How to Run
